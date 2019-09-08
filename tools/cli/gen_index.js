@@ -43,11 +43,8 @@ function gen_html(body) {
 async function read(filename) {
   const content = JSON.parse(await fs.readFile(filename, 'utf8'));
   const name = path.basename(filename, '.json');
-  const [topic, chapter] = content[0].text
-    .replace('# ', '')
-    .split(' ')
-    .slice(0, 2);
-  return [topic, `* [${chapter}](${name}.html)`];
+  const topic = content[0].text.replace('# ', '');
+  return `* [${topic}](${name}.html)`;
 }
 
 async function processFile(templateFile, outFile, content) {
@@ -77,19 +74,16 @@ async function main() {
     .demandOption(['input', 'template', 'output'], 'Please provide input path, template file and output file')
     .help().argv;
 
-  const results = Array(130)
+  const results = Array(20)
     .fill()
     .map((x, i) => {
-      const filename = path.join(argv.i, `${(i + 1).toString().padStart(3, '0')}.json`);
+      const filename = path.join(argv.i, `${(i + 1).toString().padStart(2, '0')}.json`);
       return read(filename);
     });
 
   const content = await Promise.all(results);
-  const grouped = R.groupWith((a, b) => a[0] === b[0], content)
-    .map(item => `# ${item[0][0]}\n\n${item.map(v => v[1]).join('\n')}`)
-    .join('\n\n---\n\n');
 
-  await processFile(argv.t, argv.o, grouped);
+  await processFile(argv.t, argv.o, content.join('\n'));
 }
 
 main();
