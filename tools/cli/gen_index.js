@@ -11,7 +11,7 @@ function gen_html(body) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>史记</title>
+    <title>论语</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
     <style>
       * {font-size: 20px;}

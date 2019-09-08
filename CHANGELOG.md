@@ -1,3 +1,6 @@
+## 0.2.3 (September 08, 2019)
+  - fix typo
+
 ## 0.2.2 (September 07, 2019)
   - fix badge
 
