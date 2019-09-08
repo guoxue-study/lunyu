@@ -69,20 +69,13 @@ merge-audio: # need to define CHAPTER, N1 and N2, e.g. N1=23 N2=24, result will 
 
 gen-all-audios:
 	num=1 ; while [[ $$num -le 9 ]] ; do \
-		make gen-audios CHAPTER=00$$num ; \
-		((num = num + 1)) ; \
-	done;
-	num=10 ; while [[ $$num -le 99 ]] ; do \
 		make gen-audios CHAPTER=0$$num ; \
 		((num = num + 1)) ; \
 	done;
-	num=100 ; while [[ $$num -le 130 ]] ; do \
+	num=10 ; while [[ $$num -le 20 ]] ; do \
 		make gen-audios CHAPTER=$$num ; \
 		((num = num + 1)) ; \
-	done
-
-
-
+	done;
 
 correct-audio:
 	@cd slides/assets/audios/$(CHAPTER); rm $(N2).mp3;
