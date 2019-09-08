@@ -1,6 +1,6 @@
 # 《论语》胶片版
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d04c0d0f-965e-4bc6-95cd-bf78bca2fba7/deploy-status)](https://app.netlify.com/sites/shi-ji/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7705de93-7523-47de-a430-3cee6909ede0/deploy-status)](https://app.netlify.com/sites/lunyu/deploys)
 
 TLDR: [https://lunyu.qiaopang.com](https://lunyu.qiaopang.com)
 
